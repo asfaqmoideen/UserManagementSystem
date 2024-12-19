@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UMS - Home</title>
     <script src="/src/js/pageController.js"></script>
-    <script src="/src/js/dashboardController.js"></script>
+    <script type="module" src="/src/js/dashboardController.js"></script>
     <link rel="stylesheet" href="/src/css/dashborad.css">
 </head>
 <body>
@@ -42,19 +42,20 @@
               <div class="usersheadgrp">
                 <h2 id="userHead">List of All User</h2>
               </div>
-                <table id="disp-table">
+                <table id="users-table">
                     <thead>
                         <tr>
                             <td>Id</td>
-                            <td>Username</td>
-                            <td>E-mail</td>
                             <td>First Name</td>
                             <td>Last Name</td>
-                            <td>Gender</td>
+                            <td>E-mail</td>
+                            <td>Phone</td>  
+                            <td>Role</td>
                         </tr>
                     </thead>
                     <tbody></tbody>
                 </table>
+                <div id="paginate-div"></div>
             </div>
             <div id="posts-content" class="content">
                 <h1>Posts</h1>
