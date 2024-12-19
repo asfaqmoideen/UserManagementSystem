@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UMS - Home</title>
+    <script src="/src/js/pageController.js"></script>
+    <script src="/src/js/dashboardController.js"></script>
+    <link rel="stylesheet" href="/src/css/dashborad.css">
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <div class="container">
+         <h1>UserSphere</h1>
+            <nav>
+            <ul>
+                <li>Hii, <span id="welcome-span"></span></li>
+                <li><a id="logout-btn">logout</a></li>
+            </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+      <div class="overlay" id="overlay"></div>
+        <div class="container-confirmation" id="confirmation">
+            <h3 id="confirm-title"></h3>
+            <div class="btn-wrap">  
+            <button type="button" id="yesbtn" class="btn-grad">Yes</button>
+            <button type="button" id= "nobtn" class="btn-grad">No</button></div>    
+        </div>
+        <aside class="sidebar">
+          <ul>
+            <li class="active" id="users">Users</li>
+            <li id="posts">Posts</li>
+            <li id="carts">Carts</li>
+            <li id="todos">Todos</li>
+          </ul>
+        </aside>
+        <div class="main-content">
+            <div id="users-content" class="content active">
+              <div class="usersheadgrp">
+                <h2 id="userHead">List of All User</h2>
+              </div>
+                <table id="disp-table">
+                    <thead>
+                        <tr>
+                            <td>Id</td>
+                            <td>Username</td>
+                            <td>E-mail</td>
+                            <td>First Name</td>
+                            <td>Last Name</td>
+                            <td>Gender</td>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div id="posts-content" class="content">
+                <h1>Posts</h1>
+            </div>
+
+            <div id="todos-content" class="content">
+                <h1>Todos</h1>
+            </div>
+            <div id="carts-content" class="content">
+                <h1>Carts</h1>
+            </div>
+
+        </div>
+    </div>
+    <footer>   
+        <div class="container">
+            <p>© All rights reseverd @ UserSphere 2024</p>
+        </div> 
+    </footer>
+</body>
+</html>

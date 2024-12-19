@@ -4,18 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
+    <script src="/src/js/main-script.js"></script>
 </head>
 <body>
     <div class="wrapper">
         <header>
             <div class="header container">
-                <h1>User Sphere</h1>
+                <h1>UserSphere</h1>
                 <h4>A Complete User Management System</h4>
             </div>
         </header>
         <main>
             <div class="main-container">
+                <div class="content">
+                    <h1>UserSphere</h1>
+                    <button type="button" id="login-redirect-btn">Try Now</button>
+                    <p>Welcome to UserSphere, your all-in-one user management system! Effortlessly handle user authentication, profile management, 
+                        and data retrieval. Enjoy features like role-based access, secure login with JWT, and robust admin tools for adding, editing, 
+                        and deleting users. Simplify post management, user-related data, and seamless navigation—all in one secure platform!
+                    </p>
+                </div>
+                <div class="image-div">
+                    <img src="assets/mainbg.png" id="main-bg" alt="picture describes UserSphere">
+                </div>
             </div>
+            <div class="overlay hidden" id="overlay"></div>
+            <div id="login-container" class="login-container hidden">
+            <div class="modal" >
+                <form id="login-form">
+                    <div class="form-group">
+                        <h3>Sign In</h3>
+                    </div>
+                    <div class="form-group">       
+                        <input type="text" placeholder="username" id="username">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" placeholder="password" id="password">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" id="sign-btn">Sign In</button>
+                    </div>
+                    <p>or sign up with</p>
+                    <div class="form-group">
+                        <button type="button" id="fb" class="img-btn"><img src="assets/meta.png" alt="fb logo" class="btn-img"></button>
+                        <button type="button" id="google" class="img-btn"><img src="assets/search.png" alt="google logo" class="btn-img"></button>
+                        <button type="button" id="apple" class="img-btn"><img src="assets/apple-logo.png" alt="apple logo" class="btn-img"></button>
+                    </div>
+                    <p>Don't have an account ?  <span id="signinup-btn">Sign Up</span></p>
+                </form>
+            </div>
+        </div>
         </main>
         <footer>
             <div class="footer container">
