@@ -8,10 +8,9 @@ document.addEventListener('DOMContentLoaded',()=>{
     const loginform = document.getElementById("login-form");
     loginform.addEventListener('submit', (event)=>{
         event.preventDefault();
+        
         logCon.tryLogin(loginform);
-        if(true){
-            uiCon.hideLoginDiv();
-        };
+        uiCon.hideLoginDiv();
     })
 
 }
@@ -52,11 +51,11 @@ class LoginController{
             return res.json();
             })
             .then(data => {
+                console.log(data);
                 sessionStorage.setItem("token", data.accessToken);
-                console.log(data.accessToken);
-                sessionStorage.setItem("user", data);
+      //        sessionStorage.setItem("user", data);
 
-               window.location = '/src/pages/dashboard.html';
+              window.location = '/src/pages/dashboard.html';
             })
             .catch(error=>{
                 console.log(error);

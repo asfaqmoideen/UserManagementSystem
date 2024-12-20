@@ -6,11 +6,24 @@ document.addEventListener('DOMContentLoaded', async() => {
     logCon.validateUserWithToken(token);
     
     const userCont = new UsersController();
-    userCont.tryDisplayingAllUsers();
+    userCont.tryDisplayingUserProfile(JSON.parse(sessionStorage.getItem("user")));
 
+    document.getElementById('users').addEventListener("click", async() => {
+        await userCont.tryDisplayingUsers();
+    })
+    document.getElementById('dp').addEventListener("click", () => {
+        document.getElementById("dpcard").classList.toggle("hidden");
+
+    })
     document.getElementById('logout-btn').addEventListener('click', () => {
         logCon.tryLogout();
-    })
+    });
+
+    document.getElementById("todos").addEventListener("click",async ()=>{
+        await userCont.tryDisplayingTodos();
+    });
+
+
 })
 
 
@@ -35,7 +48,11 @@ class loginController{
         }
         )
         .then(user =>{
-            this.uicon.setWelcomeMessage(user.firstName)
+            sessionStorage.setItem("user", JSON.stringify(user));
+            if(user.role == "admin"){
+                document.getElementById("usermgmt").classList.remove('hidden');
+            }
+            this.uicon.setProfileDetails(user)
         })
         .catch((err) => {
             console.log(err);
@@ -47,17 +64,21 @@ class loginController{
             .then((result=>{
                 if(result){
                     sessionStorage.removeItem('token');
+                    sessionStorage.removeItem('user');
                     document.location = "/index.html";
                 }
-            }))
+        }))
     }
 }
 
 class UIController{
     constructor(){}
 
-    setWelcomeMessage(userName){
-        document.getElementById("welcome-span").textContent = userName;
+    setProfileDetails(user){
+        document.getElementById("dp").src = user.image;
+        document.getElementById('name').textContent = `${user.firstName} ${user.lastName}`;
+        document.getElementById('role').textContent = user.role;
+        document.getElementById('company').textContent = user.company.name;
     }
 
     getUserConfirmation(context) {

@@ -6,6 +6,7 @@
     <title>UMS - Home</title>
     <script src="/src/js/pageController.js"></script>
     <script type="module" src="/src/js/dashboardController.js"></script>
+    <script type="module" src="/src/js/usersController.js"></script>
     <link rel="stylesheet" href="/src/css/dashborad.css">
 </head>
 <body>
@@ -13,16 +14,19 @@
     <header>
         <div class="container">
          <h1>UserSphere</h1>
-            <nav>
-            <ul>
-                <li>Hii, <span id="welcome-span"></span></li>
-                <li><a id="logout-btn">logout</a></li>
-            </ul>
-            </nav>
+            <img id="dp" class="dp-img" alt="profilePic">
         </div>
     </header>
     <div class="container">
       <div class="overlay" id="overlay"></div>
+      <div class="profilecard hidden" id="dpcard">
+        <div class="cont">
+            <p id="name"></p>
+            <p id="role"></p>
+            <p id="company"></p>
+            <button type="button" id="logout-btn">Logout</button>
+        </div>
+      </div>
         <div class="container-confirmation" id="confirmation">
             <h3 id="confirm-title"></h3>
             <div class="btn-wrap">  
@@ -31,14 +35,27 @@
         </div>
         <aside class="sidebar">
           <ul>
-            <li class="active" id="users">Users</li>
+            <li class="active" id="profile">Profile</li>
             <li id="posts">Posts</li>
             <li id="carts">Carts</li>
             <li id="todos">Todos</li>
+            <li id="users">Users</li>
+            <li id="usermgmt" class="hidden">User Management</li>
           </ul>
         </aside>
         <div class="main-content">
-            <div id="users-content" class="content active">
+            <div id="profile-content" class="content active">
+                <div class="profileHeadGroup">
+                    <h3>Overview</h3> <h4 id="emp-name"></h4>
+                    <button type="button" id="viewPersonalBtn">View personal Details</button>
+                </div>
+                <div class="profile-div"  id="profile-div">
+                </div>
+                <div class="personalprofile-div hidden" id="personalprofile-div">
+                <div id="personal-div" class="personal-div"></div>  
+                </div>
+            </div>
+            <div id="users-content" class="content">
               <div class="usersheadgrp">
                 <h2 id="userHead">List of All User</h2>
               </div>
@@ -55,17 +72,32 @@
                     </thead>
                     <tbody></tbody>
                 </table>
-                <div id="paginate-div"></div>
+                <div id="paginate-div">
+                    <button type="button"  id="prev-btn">Prev</button>
+                    <span id="pagenumber">1</span>
+                    <button type="button"  id="next-btn">Next</button>
+                </div>
             </div>
             <div id="posts-content" class="content">
                 <h1>Posts</h1>
+                <div id="posts-div">
+
+                </div>
             </div>
 
             <div id="todos-content" class="content">
                 <h1>Todos</h1>
+                <div id="todos-grid" class="grid">
+                </div>
             </div>
             <div id="carts-content" class="content">
                 <h1>Carts</h1>
+                <div class="carts-div">
+
+                </div>
+            </div>
+            <div id="usermgmt-content" class="content">
+                <h1>Admin Tools</h1>
             </div>
 
         </div>
