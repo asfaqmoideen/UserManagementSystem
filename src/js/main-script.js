@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded',()=>{
         event.preventDefault();
         
         logCon.tryLogin(loginform);
-        uiCon.hideLoginDiv();
     })
 
 }
@@ -28,10 +27,18 @@ class UIController{
         document.getElementById('login-container').classList.add("hidden");
         document.getElementById("overlay").classList.add('hidden');
     }
+
+    displayErrorMessage(message)
+    {
+        document.getElementById('login-error').textContent = message;
+    }
+
 }
 
 class LoginController{
-    constructor(){}
+    constructor(){
+        this.ui = new UIController();
+    }
 
     tryLogin(loginform){
         fetch('https://dummyjson.com/user/login', {
@@ -58,6 +65,7 @@ class LoginController{
               window.location = '/src/pages/dashboard.html';
             })
             .catch(error=>{
+                this.ui.displayErrorMessage(`${error.message} Credentials`);
                 console.log(error);
             }
             )

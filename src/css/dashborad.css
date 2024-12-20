@@ -169,8 +169,7 @@ a:hover{
     right: 3%;
     z-index: 1000;
     background: white;
-    width: 200px;
-    height: 100px;
+    width: 250px;
     border-radius: 10px;
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
   }
@@ -178,10 +177,11 @@ a:hover{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: .5rem;
   }
 
   .cont p{
-    margin: .2em;
+    margin: .5em;
   }
 
   .tile {
@@ -200,4 +200,32 @@ a:hover{
   .profile-div , .personal-div{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    gap: 2em;
+    margin: 1rem;
   }
+
+.profileHeadGroup{
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem;
+}
+
+.profilepic{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.posts-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+button{
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin: .5rem;
+}

@@ -23,7 +23,13 @@ document.addEventListener('DOMContentLoaded', async() => {
         await userCont.tryDisplayingTodos();
     });
 
+    document.getElementById('posts').addEventListener('click', async()=>{
+        await userCont.tryDisplayingPosts();
+    })
 
+    document.getElementById('carts').addEventListener('click', async ()=>{
+        await userCont.tryDisplayingCarts();
+    })
 })
 
 

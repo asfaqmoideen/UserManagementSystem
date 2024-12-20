@@ -40,19 +40,23 @@
             <li id="carts">Carts</li>
             <li id="todos">Todos</li>
             <li id="users">Users</li>
-            <li id="usermgmt" class="hidden">User Management</li>
+            <li id="usermgmt" class="hidden">Admin Tools</li>
           </ul>
         </aside>
         <div class="main-content">
             <div id="profile-content" class="content active">
                 <div class="profileHeadGroup">
                     <h3>Overview</h3> <h4 id="emp-name"></h4>
-                    <button type="button" id="viewPersonalBtn">View personal Details</button>
+                    <button type="button" id="viewPersonalBtn">Personal Details</button>
+                </div>
+                <div class="profilepic">
+                    <img id="profilePic" alt="user profile picture">
                 </div>
                 <div class="profile-div"  id="profile-div">
                 </div>
                 <div class="personalprofile-div hidden" id="personalprofile-div">
-                <div id="personal-div" class="personal-div"></div>  
+                <div id="personal-div" class="personal-div">
+                </div>  
                 </div>
             </div>
             <div id="users-content" class="content">
@@ -73,14 +77,16 @@
                     <tbody></tbody>
                 </table>
                 <div id="paginate-div">
+                    <button type="button" id="first-btn">First</button>
                     <button type="button"  id="prev-btn">Prev</button>
                     <span id="pagenumber">1</span>
                     <button type="button"  id="next-btn">Next</button>
+                    <button type="button" id="last-btn">Last</button>
                 </div>
             </div>
             <div id="posts-content" class="content">
                 <h1>Posts</h1>
-                <div id="posts-div">
+                <div id="posts-div" class="posts-div">
 
                 </div>
             </div>
@@ -92,7 +98,7 @@
             </div>
             <div id="carts-content" class="content">
                 <h1>Carts</h1>
-                <div class="carts-div">
+                <div id="carts-div" class="grid">
 
                 </div>
             </div>

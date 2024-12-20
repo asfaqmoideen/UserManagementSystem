@@ -1,15 +1,20 @@
 *{
     margin: 0;
 }
+body{
+    background: url('/assets/main-bg.jpg') no-repeat center center/cover;
+}
 
 .wrapper {
     height: 100vh; 
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 main{
     flex: 1;
 }
+
 
 .container{
     display: flex;
@@ -45,10 +50,12 @@ form{
 
 .main-container{
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    height: 78vh;
 }
+
 .overlay {
     position: fixed;
     top: 0;
@@ -75,6 +82,11 @@ form{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    color: #ccc;
 }
 
 #sign-btn, input{
@@ -100,12 +112,24 @@ form{
     width: 400px;
 }
 .logo{
-    height: 2rem;
-    width: 2rem;
+    height: 3rem;
+    width: 4rem;
 }
 
 #signinup-btn{
     color: blue; 
     font-weight: bold;
     cursor: pointer;
+ }
+
+ .error{
+    color: red;
+ }
+
+ #login-redirect-btn{
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: .5rem;
  }

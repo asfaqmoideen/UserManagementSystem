@@ -10,22 +10,20 @@
     <div class="wrapper">
         <header>
             <div class="header container">
+                <img src="/assets/logomain.png" alt="logo" class="logo">
                 <h1>UserSphere</h1>
-                <h4>A Complete User Management System</h4>
+                <h4>A Comprehensive User Management System</h4>
             </div>
         </header>
         <main>
             <div class="main-container">
                 <div class="content">
                     <h1>UserSphere</h1>
-                    <button type="button" id="login-redirect-btn">Try Now</button>
+                    <button type="button" id="login-redirect-btn">Login</button>
                     <p>Welcome to UserSphere, your all-in-one user management system! Effortlessly handle user authentication, profile management, 
                         and data retrieval. Enjoy features like role-based access, secure login with JWT, and robust admin tools for adding, editing, 
                         and deleting users. Simplify post management, user-related data, and seamless navigation—all in one secure platform!
                     </p>
-                </div>
-                <div class="image-div">
-                    <img src="assets/mainbg.png" id="main-bg" alt="picture describes UserSphere">
                 </div>
             </div>
             <div class="overlay hidden" id="overlay"></div>
@@ -44,6 +42,7 @@
                     <div class="form-group">
                         <button type="submit" id="sign-btn">Sign In</button>
                     </div>
+                    <p id="login-error" class="error"></p>
                     <p>Don't have an account ?  <span id="signinup-btn">Sign Up</span></p>
                 </form>
             </div>
