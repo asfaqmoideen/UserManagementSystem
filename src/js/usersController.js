@@ -34,7 +34,7 @@ class UserAPIService{
         const reponse = await fetch(`https://dummyjson.com/users`);
         return reponse.json();
     }
-
+    
     async getUsers(limit, skip){
         const reponse = await fetch(`https://dummyjson.com/users?limit=${limit}&skip=${skip}`);
         return reponse.json();
@@ -152,7 +152,7 @@ class UsersUIController{
                 }
             })
 
-
+            
             grid.appendChild(tile);
         });
     }

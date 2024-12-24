@@ -7,8 +7,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     const logCon = new LoginController();
     const loginform = document.getElementById("login-form");
     loginform.addEventListener('submit', (event)=>{
-        event.preventDefault();
-        
+        event.preventDefault(); 
         logCon.tryLogin(loginform);
     })
 
@@ -21,11 +20,6 @@ class UIController{
     showLoginDiv(){
         document.getElementById('login-container').classList.remove("hidden");
         document.getElementById("overlay").classList.remove('hidden');
-    }
-
-    hideLoginDiv(){
-        document.getElementById('login-container').classList.add("hidden");
-        document.getElementById("overlay").classList.add('hidden');
     }
 
     displayErrorMessage(message)
@@ -60,9 +54,7 @@ class LoginController{
             .then(data => {
                 console.log(data);
                 sessionStorage.setItem("token", data.accessToken);
-      //        sessionStorage.setItem("user", data);
-
-              window.location = '/src/pages/dashboard.html';
+                window.location = '/src/pages/dashboard.html';
             })
             .catch(error=>{
                 this.ui.displayErrorMessage(`${error.message} Credentials`);
